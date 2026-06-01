@@ -8,14 +8,14 @@ html{
 
 body{
   margin:0;
-  font-family:'Inter',sans-serif;
-  background:#f8f5f2;
-  color:#4b3b33;
+  font-family:'Inter', Arial, sans-serif;
+  background:#f8f5f1;
+  color:#2d2521;
 }
 
 a{
-  text-decoration:none;
   color:inherit;
+  text-decoration:none;
 }
 
 .page{
@@ -32,131 +32,144 @@ a{
   justify-content:space-between;
   align-items:center;
   padding:24px 7%;
-  background:rgba(248,245,242,.92);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(75,59,51,.08);
+  background:rgba(248,245,241,.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(45,37,33,.08);
 }
 
 .brand{
   margin:0;
-  font-family:'Playfair Display',serif;
-  letter-spacing:4px;
-  color:#3d2f29;
+  font-family:'Playfair Display', Georgia, serif;
+  letter-spacing:5px;
+  font-size:28px;
 }
 
 .tag{
-  margin:4px 0 0;
-  font-size:11px;
-  letter-spacing:3px;
+  margin:6px 0 0;
   text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:11px;
+  color:#8c776b;
 }
 
 .navLinks{
   display:flex;
-  gap:30px;
-  font-weight:600;
+  gap:32px;
+  font-weight:700;
+  font-size:14px;
 }
 
 /* HERO */
 
 .hero{
-  min-height:95vh;
+  min-height:92vh;
   display:flex;
   align-items:center;
   padding:120px 8%;
   background:
     linear-gradient(
-      rgba(248,245,242,.55),
-      rgba(248,245,242,.75)
+      rgba(248,245,241,.55),
+      rgba(248,245,241,.82)
     ),
-    url("/images/hero.jpg");
-
+    url("/images/cream-set.png");
   background-size:cover;
   background-position:center;
 }
 
 .heroContent{
   max-width:720px;
+  padding:52px;
+  border-radius:38px;
+  background:rgba(255,255,255,.58);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.48);
+  box-shadow:0 30px 90px rgba(45,37,33,.12);
 }
 
-.eyebrow{
+.eyebrow,
+.sectionLabel{
   text-transform:uppercase;
   letter-spacing:4px;
   font-size:12px;
-  color:#8b7366;
+  font-weight:800;
+  color:#9b7c63;
 }
 
-.heroTitle{
-  font-family:'Playfair Display',serif;
-  font-size:78px;
+.sectionLabel{
+  text-align:center;
+}
+
+.sectionLabel.left{
+  text-align:left;
+}
+
+.hero h2{
+  font-family:'Playfair Display', Georgia, serif;
+  font-size:76px;
   line-height:1;
-  margin:20px 0;
-  color:#3d2f29;
+  margin:18px 0;
 }
 
-.heroText{
-  font-size:20px;
+.hero p{
+  font-size:18px;
   line-height:1.8;
-  max-width:650px;
 }
 
 .heroButtons{
   display:flex;
   gap:16px;
-  margin-top:40px;
   flex-wrap:wrap;
+  margin-top:32px;
 }
 
 /* BUTTONS */
 
 .primaryBtn,
-.secondaryBtn{
-  padding:18px 28px;
+.secondaryBtn,
+.productInfo button,
+.waitlistForm button{
+  border:none;
   border-radius:999px;
-  font-weight:700;
-  transition:.3s;
+  padding:17px 28px;
+  font-weight:800;
+  cursor:pointer;
+  transition:.3s ease;
 }
 
-.primaryBtn{
-  background:#3d2f29;
+.primaryBtn,
+.productInfo button,
+.waitlistForm button{
+  background:#2d2521;
   color:white;
 }
 
 .secondaryBtn{
-  border:1px solid #3d2f29;
   background:white;
+  color:#2d2521;
+  border:1px solid rgba(45,37,33,.35);
 }
 
 .primaryBtn:hover,
-.secondaryBtn:hover{
+.secondaryBtn:hover,
+.productInfo button:hover,
+.waitlistForm button:hover{
   transform:translateY(-4px);
+  box-shadow:0 16px 35px rgba(45,37,33,.16);
 }
 
-/* SECTIONS */
+/* COLLECTION */
 
-.collectionSection,
-.aboutSection,
-.contactSection{
-  padding:120px 8%;
-}
-
-.sectionLabel{
-  text-transform:uppercase;
-  letter-spacing:4px;
-  color:#8b7366;
-  font-size:12px;
-  text-align:center;
+.collectionSection{
+  padding:120px 7%;
 }
 
 .sectionTitle{
-  font-family:'Playfair Display',serif;
+  font-family:'Playfair Display', Georgia, serif;
   text-align:center;
   font-size:58px;
-  margin:20px 0 60px;
-  color:#3d2f29;
+  line-height:1.1;
+  margin:20px 0 64px;
 }
-
-/* PRODUCTS */
 
 .productGrid{
   display:grid;
@@ -166,113 +179,244 @@ a{
 
 .productCard{
   background:white;
-  border-radius:28px;
+  border-radius:34px;
   overflow:hidden;
-  box-shadow:0 20px 50px rgba(0,0,0,.08);
-  transition:.3s;
+  box-shadow:0 24px 70px rgba(45,37,33,.10);
+  border:1px solid rgba(45,37,33,.08);
 }
 
-.productCard:hover{
-  transform:translateY(-10px);
+.imageWrap{
+  position:relative;
+  overflow:hidden;
 }
 
-.productCard img{
+.imageWrap img{
   width:100%;
-  height:500px;
+  height:520px;
   object-fit:cover;
-}
-
-.productCard h3{
-  padding:20px 24px 0;
-  font-family:'Playfair Display',serif;
-  font-size:30px;
-}
-
-.productCard p{
-  padding:0 24px;
-  line-height:1.6;
-}
-
-.productCard span{
   display:block;
-  padding:0 24px 24px;
-  font-weight:800;
-  font-size:24px;
-  color:#3d2f29;
+  transition:transform 1s ease;
 }
 
-/* ABOUT */
+.productCard:hover img{
+  transform:scale(1.06);
+}
 
-.aboutText{
-  max-width:900px;
-  margin:auto;
-  text-align:center;
-  font-size:20px;
-  line-height:1.9;
+.saleTag{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:rgba(255,255,255,.85);
+  color:#2d2521;
+  padding:10px 14px;
+  border-radius:999px;
+  text-transform:uppercase;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.productInfo{
+  padding:30px;
+}
+
+.colorName{
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:12px;
+  color:#9b7c63;
+  font-weight:800;
+}
+
+.productInfo h3{
+  font-family:'Playfair Display', Georgia, serif;
+  font-size:34px;
+  margin:10px 0;
+}
+
+.productInfo p{
+  line-height:1.7;
+}
+
+.productInfo strong{
+  display:block;
+  font-size:28px;
+  margin:20px 0;
+}
+
+.swatches{
+  display:flex;
+  gap:12px;
+  margin-bottom:24px;
+}
+
+.swatch{
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  border:1px solid #c9beb8;
+  display:inline-block;
+}
+
+.swatch.cream{
+  background:#f3eadc;
+}
+
+.swatch.black{
+  background:#050505;
+}
+
+.swatch.chocolate{
+  background:#5a3528;
+}
+
+/* DETAILS */
+
+.detailsSection{
+  padding:120px 8%;
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:60px;
+  align-items:start;
+  background:#efe8df;
+}
+
+.detailsSection h2{
+  font-family:'Playfair Display', Georgia, serif;
+  font-size:56px;
+  line-height:1.1;
+  margin:20px 0;
+}
+
+.detailsGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+
+.detailsGrid div{
+  background:white;
+  padding:34px;
+  border-radius:28px;
+  box-shadow:0 20px 60px rgba(45,37,33,.08);
+}
+
+.detailsGrid h3{
+  font-family:'Playfair Display', Georgia, serif;
+  font-size:28px;
+  margin-top:0;
+}
+
+.detailsGrid p{
+  line-height:1.7;
 }
 
 /* WAITLIST */
 
-.emailForm{
-  max-width:700px;
+.waitlistSection{
+  padding:120px 8%;
+  text-align:center;
+  background:
+    linear-gradient(
+      rgba(45,37,33,.70),
+      rgba(45,37,33,.82)
+    ),
+    url("/images/chocolate-set.png");
+  background-size:cover;
+  background-position:center;
+  color:white;
+}
+
+.waitlistSection h2{
+  font-family:'Playfair Display', Georgia, serif;
+  font-size:60px;
+  margin:18px 0;
+}
+
+.waitlistSection p{
+  max-width:780px;
+  margin:0 auto 34px;
+  line-height:1.8;
+  font-size:18px;
+}
+
+.waitlistForm{
+  max-width:720px;
   margin:auto;
   display:flex;
-  gap:16px;
+  gap:14px;
 }
 
-.emailForm input{
+.waitlistForm input{
   flex:1;
-  padding:18px;
+  padding:18px 22px;
   border-radius:999px;
-  border:1px solid #d8cfc9;
+  border:none;
+  font-size:16px;
 }
 
-.emailForm button{
-  border:none;
-  background:#3d2f29;
+.waitlistForm button{
+  background:#c4a27f;
   color:white;
-  padding:18px 30px;
-  border-radius:999px;
-  font-weight:700;
-  cursor:pointer;
 }
 
 /* FOOTER */
 
 .footer{
-  background:#2c221d;
-  color:white;
+  padding:70px 8%;
   text-align:center;
-  padding:80px 8%;
+  background:#1f1916;
+  color:white;
 }
 
 .footer h3{
-  font-family:'Playfair Display',serif;
-  font-size:38px;
-  margin-bottom:10px;
+  font-family:'Playfair Display', Georgia, serif;
+  letter-spacing:5px;
+  font-size:34px;
 }
 
 /* MOBILE */
 
 @media(max-width:1000px){
+  .navLinks{
+    display:none;
+  }
 
-  .productGrid{
+  .hero{
+    padding:110px 6% 70px;
+  }
+
+  .heroContent{
+    padding:34px;
+  }
+
+  .hero h2{
+    font-size:48px;
+  }
+
+  .productGrid,
+  .detailsSection,
+  .detailsGrid{
     grid-template-columns:1fr;
   }
 
-  .heroTitle{
-    font-size:54px;
+  .imageWrap img{
+    height:420px;
   }
 
-  .sectionTitle{
-    font-size:42px;
+  .sectionTitle,
+  .detailsSection h2,
+  .waitlistSection h2{
+    font-size:40px;
   }
 
-  .emailForm{
+  .waitlistForm{
     flex-direction:column;
   }
 
-  .navLinks{
-    display:none;
+  .collectionSection,
+  .detailsSection,
+  .waitlistSection{
+    padding:80px 6%;
   }
 }
