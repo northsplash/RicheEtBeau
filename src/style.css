@@ -18,6 +18,11 @@ a{
   text-decoration:none;
 }
 
+button,
+input{
+  font-family:'Inter', Arial, sans-serif;
+}
+
 .page{
   overflow-x:hidden;
 }
@@ -71,16 +76,17 @@ a{
       rgba(248,245,241,.55),
       rgba(248,245,241,.82)
     ),
-    url("/images/cream-set.png");
+    url("/images/sports-cream-1.png");
+
   background-size:cover;
   background-position:center;
 }
 
 .heroContent{
-  max-width:720px;
+  max-width:760px;
   padding:52px;
   border-radius:38px;
-  background:rgba(255,255,255,.58);
+  background:rgba(255,255,255,.62);
   backdrop-filter:blur(18px);
   border:1px solid rgba(255,255,255,.48);
   box-shadow:0 30px 90px rgba(45,37,33,.12);
@@ -126,7 +132,7 @@ a{
 
 .primaryBtn,
 .secondaryBtn,
-.productInfo button,
+.cartBtn,
 .waitlistForm button{
   border:none;
   border-radius:999px;
@@ -137,7 +143,7 @@ a{
 }
 
 .primaryBtn,
-.productInfo button,
+.cartBtn,
 .waitlistForm button{
   background:#2d2521;
   color:white;
@@ -151,7 +157,7 @@ a{
 
 .primaryBtn:hover,
 .secondaryBtn:hover,
-.productInfo button:hover,
+.cartBtn:hover,
 .waitlistForm button:hover{
   transform:translateY(-4px);
   box-shadow:0 16px 35px rgba(45,37,33,.16);
@@ -174,7 +180,7 @@ a{
 .productGrid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:30px;
+  gap:32px;
 }
 
 .productCard{
@@ -183,22 +189,28 @@ a{
   overflow:hidden;
   box-shadow:0 24px 70px rgba(45,37,33,.10);
   border:1px solid rgba(45,37,33,.08);
+  transition:.3s ease;
+}
+
+.productCard:hover{
+  box-shadow:0 30px 90px rgba(45,37,33,.16);
 }
 
 .imageWrap{
   position:relative;
   overflow:hidden;
+  background:#efe8df;
 }
 
 .imageWrap img{
   width:100%;
-  height:520px;
+  height:480px;
   object-fit:cover;
   display:block;
   transition:transform 1s ease;
 }
 
-.productCard:hover img{
+.productCard:hover .imageWrap img{
   transform:scale(1.06);
 }
 
@@ -206,7 +218,7 @@ a{
   position:absolute;
   top:20px;
   right:20px;
-  background:rgba(255,255,255,.85);
+  background:rgba(255,255,255,.88);
   color:#2d2521;
   padding:10px 14px;
   border-radius:999px;
@@ -216,8 +228,44 @@ a{
   letter-spacing:1px;
 }
 
+/* THUMBNAILS */
+
+.thumbRow{
+  display:flex;
+  gap:10px;
+  padding:18px 24px 0;
+}
+
+.thumbRow button{
+  width:64px;
+  height:64px;
+  padding:0;
+  border-radius:16px;
+  border:1px solid rgba(45,37,33,.12);
+  background:#f8f5f1;
+  overflow:hidden;
+  cursor:pointer;
+  opacity:.65;
+  transition:.25s ease;
+}
+
+.thumbRow button:hover,
+.thumbRow .activeThumb{
+  opacity:1;
+  border-color:#2d2521;
+  transform:translateY(-2px);
+}
+
+.thumbRow img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* PRODUCT INFO */
+
 .productInfo{
-  padding:30px;
+  padding:28px 30px 34px;
 }
 
 .colorName{
@@ -230,7 +278,7 @@ a{
 
 .productInfo h3{
   font-family:'Playfair Display', Georgia, serif;
-  font-size:34px;
+  font-size:32px;
   margin:10px 0;
 }
 
@@ -238,36 +286,50 @@ a{
   line-height:1.7;
 }
 
-.productInfo strong{
-  display:block;
-  font-size:28px;
+.priceRow{
+  display:flex;
+  align-items:center;
+  gap:14px;
   margin:20px 0;
 }
 
-.swatches{
+.priceRow span{
+  color:#9a8a80;
+  text-decoration:line-through;
+  font-weight:700;
+}
+
+.priceRow strong{
+  font-size:28px;
+  color:#2d2521;
+}
+
+.sizeRow{
   display:flex;
-  gap:12px;
-  margin-bottom:24px;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:20px 0 24px;
 }
 
-.swatch{
-  width:24px;
-  height:24px;
-  border-radius:50%;
-  border:1px solid #c9beb8;
-  display:inline-block;
+.sizeRow button{
+  width:46px;
+  height:42px;
+  border-radius:14px;
+  border:1px solid rgba(45,37,33,.18);
+  background:#f8f5f1;
+  color:#2d2521;
+  font-weight:800;
+  cursor:pointer;
+  transition:.25s ease;
 }
 
-.swatch.cream{
-  background:#f3eadc;
+.sizeRow button:hover{
+  background:#2d2521;
+  color:white;
 }
 
-.swatch.black{
-  background:#050505;
-}
-
-.swatch.chocolate{
-  background:#5a3528;
+.cartBtn{
+  width:100%;
 }
 
 /* DETAILS */
@@ -321,7 +383,8 @@ a{
       rgba(45,37,33,.70),
       rgba(45,37,33,.82)
     ),
-    url("/images/chocolate-set.png");
+    url("/images/leather-chocolate-1.png");
+
   background-size:cover;
   background-position:center;
   color:white;
@@ -360,6 +423,12 @@ a{
   color:white;
 }
 
+.phoneText{
+  margin-top:28px !important;
+  font-size:15px !important;
+  opacity:.9;
+}
+
 /* FOOTER */
 
 .footer{
@@ -377,21 +446,69 @@ a{
 
 /* MOBILE */
 
-@media(max-width:1000px){
+@media(max-width:1200px){
+  .productGrid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:800px){
+  .nav{
+    padding:18px 6%;
+  }
+
+  .brand{
+    font-size:22px;
+    letter-spacing:3px;
+  }
+
+  .tag{
+    font-size:9px;
+    letter-spacing:2px;
+  }
+
   .navLinks{
     display:none;
   }
 
   .hero{
-    padding:110px 6% 70px;
+    min-height:auto;
+    padding:90px 6% 70px;
   }
 
   .heroContent{
-    padding:34px;
+    padding:32px;
+    border-radius:30px;
   }
 
   .hero h2{
-    font-size:48px;
+    font-size:44px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .heroButtons{
+    flex-direction:column;
+  }
+
+  .primaryBtn,
+  .secondaryBtn{
+    width:100%;
+    text-align:center;
+  }
+
+  .collectionSection,
+  .detailsSection,
+  .waitlistSection{
+    padding:80px 6%;
+  }
+
+  .sectionTitle,
+  .detailsSection h2,
+  .waitlistSection h2{
+    font-size:38px;
   }
 
   .productGrid,
@@ -404,19 +521,11 @@ a{
     height:420px;
   }
 
-  .sectionTitle,
-  .detailsSection h2,
-  .waitlistSection h2{
-    font-size:40px;
-  }
-
   .waitlistForm{
     flex-direction:column;
   }
 
-  .collectionSection,
-  .detailsSection,
-  .waitlistSection{
-    padding:80px 6%;
+  .waitlistForm button{
+    width:100%;
   }
 }
