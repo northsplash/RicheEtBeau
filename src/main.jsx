@@ -139,6 +139,78 @@ function App() {
               Preorder Now
             </a>
 
+          <section id="collections" className="brandSection">
+  <p className="sectionLabel">Collections</p>
+  <h2 className="sectionTitle">Designed in drops, released with intention.</h2>
+
+  <div className="infoGrid">
+    <div>
+      <h3>The Sports Set</h3>
+      <p>Signature sculpting activewear in Cream, Black, and Chocolate.</p>
+    </div>
+
+    <div>
+      <h3>The Hoodie Set</h3>
+      <p>Cropped hoodie and joggers for luxury comfort days.</p>
+    </div>
+
+    <div>
+      <h3>The Leather Set</h3>
+      <p>A statement collection made for elevated street-luxe style.</p>
+    </div>
+  </div>
+</section>
+
+<section id="vip" className="vipSection">
+  <p className="sectionLabel">VIP Club</p>
+  <h2>Get early access before everyone else.</h2>
+  <p>
+    VIP members receive first access to preorder drops, private discounts,
+    color voting, and exclusive future releases.
+  </p>
+
+  <a className="primaryBtn" href="#waitlist">
+    Join VIP List
+  </a>
+</section>
+
+<section id="custom" className="customSection">
+  <p className="sectionLabel">Custom Requests</p>
+  <h2 className="sectionTitle">Help shape future drops.</h2>
+
+  <form className="requestForm">
+    <input placeholder="Name" />
+    <input type="email" placeholder="Email" />
+    <select>
+      <option>What would you like to request?</option>
+      <option>New Color</option>
+      <option>Plus Sizes</option>
+      <option>New Style</option>
+      <option>Restock Request</option>
+      <option>Personalization Request</option>
+    </select>
+    <input placeholder="Color / Size / Style Request" />
+    <textarea placeholder="Tell us what you want to see in a future drop." />
+    <button type="submit">Submit Request</button>
+  </form>
+</section>
+
+<section id="about" className="aboutSection">
+  <p className="sectionLabel">About</p>
+  <h2 className="sectionTitle">Riche Et Beau means rich and beautiful.</h2>
+  <p>
+    Riche Et Beau was created for women who want comfort, confidence,
+    and luxury in the same look. Every drop is built around soft power,
+    beautiful movement, and everyday elegance.
+  </p>
+</section>
+
+<section id="contact" className="contactSection">
+  <p className="sectionLabel">Contact</p>
+  <h2>Questions before preorder?</h2>
+  <p>Text or call {phone}</p>
+</section>
+          <section id="waitlist" className="waitlistSection">
             <a href="#waitlist" className="secondaryBtn">
               Join Waitlist
             </a>
