@@ -3,178 +3,149 @@ import { createRoot } from "react-dom/client";
 import { motion } from "framer-motion";
 import "./style.css";
 
-function App() {
-  return <HomePage />;
-}
+const products = [
+  {
+    name: "Ivory Luxe Set",
+    color: "Cream",
+    price: "$129",
+    image: "/images/cream-set.png",
+  },
+  {
+    name: "Midnight Sculpt Set",
+    color: "Black",
+    price: "$129",
+    image: "/images/black-set.png",
+  },
+  {
+    name: "Espresso Elite Set",
+    color: "Chocolate",
+    price: "$129",
+    image: "/images/chocolate-set.png",
+  },
+];
 
-function HomePage() {
+function App() {
   return (
     <div className="page">
-
       <nav className="nav">
         <div>
           <h1 className="brand">RICHE ET BEAU</h1>
-          <p className="tag">Luxury Athleisure</p>
+          <p className="tag">Luxe Confidence Beauty</p>
         </div>
 
         <div className="navLinks">
           <a href="#collection">Collection</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a href="#details">Details</a>
+          <a href="#waitlist">Waitlist</a>
         </div>
       </nav>
 
-      <motion.section
-        className="hero"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
-        <div className="heroContent">
-
-          <p className="eyebrow">
-            Elevated Activewear
-          </p>
-
-          <h2 className="heroTitle">
-            Designed For Women Who Move Beautifully.
-          </h2>
-
-          <p className="heroText">
-            Sculpting silhouettes. Premium fabrics.
-            Luxury comfort for every part of your day.
+      <section className="hero">
+        <motion.div
+          className="heroContent"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          <p className="eyebrow">New Arrival</p>
+          <h2>Luxury Athleisure Made To Move.</h2>
+          <p>
+            Sculpting sports sets designed with premium comfort, elevated detail,
+            and a confident fit for everyday power.
           </p>
 
           <div className="heroButtons">
-            <a className="primaryBtn" href="#collection">
-              Shop Collection
-            </a>
-
-            <a className="secondaryBtn" href="#about">
-              Learn More
-            </a>
+            <a href="#collection" className="primaryBtn">Shop The Set</a>
+            <a href="#waitlist" className="secondaryBtn">Join Waitlist</a>
           </div>
+        </motion.div>
+      </section>
 
-        </div>
-      </motion.section>
-
-      <section
-        id="collection"
-        className="collectionSection"
-      >
-        <p className="sectionLabel">
-          Signature Collection
-        </p>
-
-        <h2 className="sectionTitle">
-          The Essentials
-        </h2>
+      <section id="collection" className="collectionSection">
+        <p className="sectionLabel">Signature Collection</p>
+        <h2 className="sectionTitle">The Luxe Comfort Sports Set</h2>
 
         <div className="productGrid">
+          {products.map((item) => (
+            <motion.div
+              className="productCard"
+              key={item.name}
+              whileHover={{ y: -10 }}
+              transition={{ duration: 0.25 }}
+            >
+              <div className="imageWrap">
+                <img src={item.image} alt={item.name} />
+                <span className="saleTag">New Arrival</span>
+              </div>
 
-          <div className="productCard">
-            <img
-              src="/images/black-set.jpg"
-              alt="Black Set"
-            />
+              <div className="productInfo">
+                <p className="colorName">{item.color}</p>
+                <h3>{item.name}</h3>
+                <p>Sports bra, high-waist leggings, and lightweight zip jacket.</p>
+                <strong>{item.price}</strong>
 
-            <h3>Midnight Sculpt Set</h3>
+                <div className="swatches">
+                  <span className="swatch cream"></span>
+                  <span className="swatch black"></span>
+                  <span className="swatch chocolate"></span>
+                </div>
 
-            <p>
-              Sports bra, leggings, and zip jacket.
-            </p>
-
-            <span>$129</span>
-          </div>
-
-          <div className="productCard">
-            <img
-              src="/images/cream-set.jpg"
-              alt="Cream Set"
-            />
-
-            <h3>Ivory Luxe Set</h3>
-
-            <p>
-              Soft neutral luxury activewear.
-            </p>
-
-            <span>$129</span>
-          </div>
-
-          <div className="productCard">
-            <img
-              src="/images/espresso-set.jpg"
-              alt="Espresso Set"
-            />
-
-            <h3>Espresso Elite Set</h3>
-
-            <p>
-              Rich sculpting performance fabric.
-            </p>
-
-            <span>$129</span>
-          </div>
-
+                <button>Add To Cart</button>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-      <section
-        id="about"
-        className="aboutSection"
-      >
-        <p className="sectionLabel">
-          About Riche Et Beau
-        </p>
+      <section id="details" className="detailsSection">
+        <div>
+          <p className="sectionLabel left">Designed For Movement</p>
+          <h2>Premium Details. Sculpting Fit. Everyday Luxury.</h2>
+        </div>
 
-        <h2 className="sectionTitle">
-          Luxury Without Compromise
-        </h2>
+        <div className="detailsGrid">
+          <div>
+            <h3>Four-Way Stretch</h3>
+            <p>Moves with your body without losing shape.</p>
+          </div>
 
-        <p className="aboutText">
-          Riche Et Beau combines elevated design,
-          premium materials, and modern silhouettes
-          to create activewear that feels just as
-          luxurious as it looks.
-        </p>
+          <div>
+            <h3>Moisture Wicking</h3>
+            <p>Designed to stay cool, dry, and comfortable.</p>
+          </div>
+
+          <div>
+            <h3>Sculpting Support</h3>
+            <p>High-waist shaping with a smooth, flattering fit.</p>
+          </div>
+
+          <div>
+            <h3>Luxury Branding</h3>
+            <p>Subtle RB details with a premium finish.</p>
+          </div>
+        </div>
       </section>
 
-      <section
-        id="contact"
-        className="contactSection"
-      >
-        <p className="sectionLabel">
-          Stay Connected
+      <section id="waitlist" className="waitlistSection">
+        <p className="sectionLabel">Launch List</p>
+        <h2>Be First To Shop Riche Et Beau.</h2>
+        <p>
+          Join the VIP list for early access, launch discounts, and first pick
+          of Cream, Black, and Chocolate.
         </p>
 
-        <h2 className="sectionTitle">
-          Join The Launch List
-        </h2>
-
-        <form className="emailForm">
-          <input
-            type="email"
-            placeholder="Enter your email"
-          />
-
-          <button type="submit">
-            Join Waitlist
-          </button>
+        <form className="waitlistForm">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Join Waitlist</button>
         </form>
       </section>
 
       <footer className="footer">
         <h3>RICHE ET BEAU</h3>
-
-        <p>
-          Luxury Athleisure For Modern Women
-        </p>
+        <p>Luxury Athleisure For Modern Women</p>
       </footer>
-
     </div>
   );
 }
 
-createRoot(
-  document.getElementById("root")
-).render(<App />);
+createRoot(document.getElementById("root")).render(<App />);
