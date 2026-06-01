@@ -11,8 +11,7 @@ const products = [
     regularPrice: "$89.99",
     salePrice: "$64.99",
     releaseDate: "Releases July 4",
-    description:
-      "Sports bra, high-waist leggings, and lightweight zip jacket.",
+    description: "Sports bra, high-waist leggings, and lightweight zip jacket.",
     colors: [
       {
         name: "Cream",
@@ -45,8 +44,7 @@ const products = [
     regularPrice: "$74.99",
     salePrice: "$54.99",
     releaseDate: "Releases July 4",
-    description:
-      "Cropped hoodie and high-waist joggers made for elevated comfort.",
+    description: "Cropped hoodie and high-waist joggers made for elevated comfort.",
     colors: [
       {
         name: "Cream",
@@ -79,8 +77,7 @@ const products = [
     regularPrice: "$119.99",
     salePrice: "$89.99",
     releaseDate: "Releases July 4",
-    description:
-      "Statement faux leather set with a sleek luxury finish.",
+    description: "Statement faux leather set with a sleek luxury finish.",
     colors: [
       {
         name: "Black",
@@ -102,6 +99,134 @@ const products = [
   },
 ];
 
+function App() {
+  return (
+    <div className="page">
+      <nav className="nav">
+        <div>
+          <h1 className="brand">RICHE ET BEAU</h1>
+          <p className="tag">Luxe Confidence Beauty</p>
+        </div>
+
+        <div className="navLinks">
+          <a href="#collection">Collection</a>
+          <a href="#details">Details</a>
+          <a href="#waitlist">Waitlist</a>
+        </div>
+      </nav>
+
+      <section className="hero">
+        <motion.div
+          className="heroContent"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          <p className="eyebrow">Preorder Collection</p>
+
+          <h2>Luxury Athleisure Made To Move.</h2>
+
+          <p>
+            Sculpting sports sets, elevated hoodie sets, and luxe leather looks
+            designed for confidence, comfort, and everyday beauty.
+          </p>
+
+          <div className="heroButtons">
+            <a href="#collection" className="primaryBtn">
+              Preorder Now
+            </a>
+
+            <a href="#waitlist" className="secondaryBtn">
+              Join Waitlist
+            </a>
+          </div>
+        </motion.div>
+      </section>
+
+      <section className="preorderBanner">
+        <p>Preorders are open now. Official release begins July 4.</p>
+      </section>
+
+      <section id="collection" className="collectionSection">
+        <p className="sectionLabel">Riche Et Beau Launch</p>
+
+        <h2 className="sectionTitle">The Signature Collection</h2>
+
+        <div className="productGrid">
+          {products.map((item) => (
+            <ProductCard key={item.name} item={item} />
+          ))}
+        </div>
+      </section>
+
+      <section id="details" className="detailsSection">
+        <div>
+          <p className="sectionLabel left">Designed For The Woman Who Moves</p>
+
+          <h2>Soft power, sculpted comfort, and luxe everyday style.</h2>
+        </div>
+
+        <div className="detailsGrid">
+          <div>
+            <h3>Premium Feel</h3>
+            <p>
+              Soft-touch fabrics and flattering silhouettes designed to feel
+              elevated.
+            </p>
+          </div>
+
+          <div>
+            <h3>Everyday Wear</h3>
+            <p>
+              From errands to travel to casual days out, each set is made to move
+              with you.
+            </p>
+          </div>
+
+          <div>
+            <h3>Signature Colors</h3>
+            <p>
+              Cream, Black, and Chocolate create a timeless luxury color story.
+            </p>
+          </div>
+
+          <div>
+            <h3>Preorder Release</h3>
+            <p>
+              Preorders are paid today. Orders begin releasing July 4.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="waitlist" className="waitlistSection">
+        <p className="sectionLabel">VIP Launch List</p>
+
+        <h2>Be First To Shop Riche Et Beau.</h2>
+
+        <p>
+          Join the VIP list for early access, launch discounts, and first pick
+          of Cream, Black, and Chocolate.
+        </p>
+
+        <form className="waitlistForm">
+          <input type="email" placeholder="Enter your email" required />
+
+          <button type="submit">Join Waitlist</button>
+        </form>
+
+        <p className="phoneText">Questions? Text or call {phone}</p>
+      </section>
+
+      <footer className="footer">
+        <h3>RICHE ET BEAU</h3>
+        <p>Luxury Athleisure For Modern Women</p>
+        <p>{phone}</p>
+      </footer>
+    </div>
+  );
+}
+
 function ProductCard({ item }) {
   const [selectedColor, setSelectedColor] = React.useState(item.colors[0]);
   const [activeImage, setActiveImage] = React.useState(item.colors[0].images[0]);
@@ -110,6 +235,17 @@ function ProductCard({ item }) {
   function chooseColor(color) {
     setSelectedColor(color);
     setActiveImage(color.images[0]);
+  }
+
+  function handlePreorder() {
+    if (!selectedSize) {
+      alert("Please choose a size before preorder.");
+      return;
+    }
+
+    alert(
+      `Square checkout will be connected here for ${item.name} - ${selectedColor.name} - Size ${selectedSize}.`
+    );
   }
 
   return (
@@ -185,7 +321,7 @@ function ProductCard({ item }) {
           ))}
         </div>
 
-        <button className="cartBtn">
+        <button className="cartBtn" onClick={handlePreorder}>
           Preorder With Square
         </button>
 
