@@ -108,11 +108,14 @@ function App() {
           <p className="tag">Luxe Confidence Beauty</p>
         </div>
 
-        <div className="navLinks">
-          <a href="#collection">Collection</a>
-          <a href="#details">Details</a>
-          <a href="#waitlist">Waitlist</a>
-        </div>
+      <div className="navLinks">
+  <a href="#collection">Shop</a>
+  <a href="#collections">Collections</a>
+  <a href="#vip">VIP Club</a>
+  <a href="#custom">Custom Requests</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</div>
       </nav>
 
       <section className="hero">
