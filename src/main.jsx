@@ -13,30 +13,9 @@ const products = [
     releaseDate: "Releases July 4",
     description: "Sports bra, high-waist leggings, and lightweight zip jacket.",
     colors: [
-      {
-        name: "Cream",
-        images: [
-          "/images/sports-cream-1.png",
-          "/images/sports-cream-2.png",
-          "/images/sports-cream-3.png",
-        ],
-      },
-      {
-        name: "Black",
-        images: [
-          "/images/sports-black-1.png",
-          "/images/sports-black-2.png",
-          "/images/sports-black-3.png",
-        ],
-      },
-      {
-        name: "Chocolate",
-        images: [
-          "/images/sports-chocolate-1.png",
-          "/images/sports-chocolate-2.png",
-          "/images/sports-chocolate-3.png",
-        ],
-      },
+      { name: "Cream", images: ["/images/sports-cream-1.png", "/images/sports-cream-2.png", "/images/sports-cream-3.png"] },
+      { name: "Black", images: ["/images/sports-black-1.png", "/images/sports-black-2.png", "/images/sports-black-3.png"] },
+      { name: "Chocolate", images: ["/images/sports-chocolate-1.png", "/images/sports-chocolate-2.png", "/images/sports-chocolate-3.png"] },
     ],
   },
   {
@@ -46,30 +25,9 @@ const products = [
     releaseDate: "Releases July 4",
     description: "Cropped hoodie and high-waist joggers made for elevated comfort.",
     colors: [
-      {
-        name: "Cream",
-        images: [
-          "/images/hoodie-cream-1.png",
-          "/images/hoodie-cream-2.png",
-          "/images/hoodie-cream-3.png",
-        ],
-      },
-      {
-        name: "Black",
-        images: [
-          "/images/hoodie-black-1.png",
-          "/images/hoodie-black-2.png",
-          "/images/hoodie-black-3.png",
-        ],
-      },
-      {
-        name: "Chocolate",
-        images: [
-          "/images/hoodie-chocolate-1.png",
-          "/images/hoodie-chocolate-2.png",
-          "/images/hoodie-chocolate-3.png",
-        ],
-      },
+      { name: "Cream", images: ["/images/hoodie-cream-1.png", "/images/hoodie-cream-2.png", "/images/hoodie-cream-3.png"] },
+      { name: "Black", images: ["/images/hoodie-black-1.png", "/images/hoodie-black-2.png", "/images/hoodie-black-3.png"] },
+      { name: "Chocolate", images: ["/images/hoodie-chocolate-1.png", "/images/hoodie-chocolate-2.png", "/images/hoodie-chocolate-3.png"] },
     ],
   },
   {
@@ -79,22 +37,8 @@ const products = [
     releaseDate: "Releases July 4",
     description: "Statement faux leather set with a sleek luxury finish.",
     colors: [
-      {
-        name: "Black",
-        images: [
-          "/images/leather-black-1.png",
-          "/images/leather-black-2.png",
-          "/images/leather-black-3.png",
-        ],
-      },
-      {
-        name: "Chocolate",
-        images: [
-          "/images/leather-chocolate-1.png",
-          "/images/leather-chocolate-2.png",
-          "/images/leather-chocolate-3.png",
-        ],
-      },
+      { name: "Black", images: ["/images/leather-black-1.png", "/images/leather-black-2.png", "/images/leather-black-3.png"] },
+      { name: "Chocolate", images: ["/images/leather-chocolate-1.png", "/images/leather-chocolate-2.png", "/images/leather-chocolate-3.png"] },
     ],
   },
 ];
@@ -108,14 +52,14 @@ function App() {
           <p className="tag">Luxe Confidence Beauty</p>
         </div>
 
-      <div className="navLinks">
-  <a href="#collection">Shop</a>
-  <a href="#collections">Collections</a>
-  <a href="#vip">VIP Club</a>
-  <a href="#custom">Custom Requests</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-</div>
+        <div className="navLinks">
+          <a href="#collection">Shop</a>
+          <a href="#collections">Collections</a>
+          <a href="#vip">VIP Club</a>
+          <a href="#custom">Custom Requests</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
       </nav>
 
       <section className="hero">
@@ -139,78 +83,6 @@ function App() {
               Preorder Now
             </a>
 
-          <section id="collections" className="brandSection">
-  <p className="sectionLabel">Collections</p>
-  <h2 className="sectionTitle">Designed in drops, released with intention.</h2>
-
-  <div className="infoGrid">
-    <div>
-      <h3>The Sports Set</h3>
-      <p>Signature sculpting activewear in Cream, Black, and Chocolate.</p>
-    </div>
-
-    <div>
-      <h3>The Hoodie Set</h3>
-      <p>Cropped hoodie and joggers for luxury comfort days.</p>
-    </div>
-
-    <div>
-      <h3>The Leather Set</h3>
-      <p>A statement collection made for elevated street-luxe style.</p>
-    </div>
-  </div>
-</section>
-
-<section id="vip" className="vipSection">
-  <p className="sectionLabel">VIP Club</p>
-  <h2>Get early access before everyone else.</h2>
-  <p>
-    VIP members receive first access to preorder drops, private discounts,
-    color voting, and exclusive future releases.
-  </p>
-
-  <a className="primaryBtn" href="#waitlist">
-    Join VIP List
-  </a>
-</section>
-
-<section id="custom" className="customSection">
-  <p className="sectionLabel">Custom Requests</p>
-  <h2 className="sectionTitle">Help shape future drops.</h2>
-
-  <form className="requestForm">
-    <input placeholder="Name" />
-    <input type="email" placeholder="Email" />
-    <select>
-      <option>What would you like to request?</option>
-      <option>New Color</option>
-      <option>Plus Sizes</option>
-      <option>New Style</option>
-      <option>Restock Request</option>
-      <option>Personalization Request</option>
-    </select>
-    <input placeholder="Color / Size / Style Request" />
-    <textarea placeholder="Tell us what you want to see in a future drop." />
-    <button type="submit">Submit Request</button>
-  </form>
-</section>
-
-<section id="about" className="aboutSection">
-  <p className="sectionLabel">About</p>
-  <h2 className="sectionTitle">Riche Et Beau means rich and beautiful.</h2>
-  <p>
-    Riche Et Beau was created for women who want comfort, confidence,
-    and luxury in the same look. Every drop is built around soft power,
-    beautiful movement, and everyday elegance.
-  </p>
-</section>
-
-<section id="contact" className="contactSection">
-  <p className="sectionLabel">Contact</p>
-  <h2>Questions before preorder?</h2>
-  <p>Text or call {phone}</p>
-</section>
-          <section id="waitlist" className="waitlistSection">
             <a href="#waitlist" className="secondaryBtn">
               Join Waitlist
             </a>
@@ -237,41 +109,105 @@ function App() {
       <section id="details" className="detailsSection">
         <div>
           <p className="sectionLabel left">Designed For The Woman Who Moves</p>
-
           <h2>Soft power, sculpted comfort, and luxe everyday style.</h2>
         </div>
 
         <div className="detailsGrid">
           <div>
             <h3>Premium Feel</h3>
-            <p>
-              Soft-touch fabrics and flattering silhouettes designed to feel
-              elevated.
-            </p>
+            <p>Soft-touch fabrics and flattering silhouettes designed to feel elevated.</p>
           </div>
 
           <div>
             <h3>Everyday Wear</h3>
-            <p>
-              From errands to travel to casual days out, each set is made to move
-              with you.
-            </p>
+            <p>From errands to travel to casual days out, each set is made to move with you.</p>
           </div>
 
           <div>
             <h3>Signature Colors</h3>
-            <p>
-              Cream, Black, and Chocolate create a timeless luxury color story.
-            </p>
+            <p>Cream, Black, and Chocolate create a timeless luxury color story.</p>
           </div>
 
           <div>
             <h3>Preorder Release</h3>
-            <p>
-              Preorders are paid today. Orders begin releasing July 4.
-            </p>
+            <p>Preorders are paid today. Orders begin releasing July 4.</p>
           </div>
         </div>
+      </section>
+
+      <section id="collections" className="brandSection">
+        <p className="sectionLabel">Collections</p>
+        <h2 className="sectionTitle">Designed in drops, released with intention.</h2>
+
+        <div className="infoGrid">
+          <div>
+            <h3>The Sports Set</h3>
+            <p>Signature sculpting activewear in Cream, Black, and Chocolate.</p>
+          </div>
+
+          <div>
+            <h3>The Hoodie Set</h3>
+            <p>Cropped hoodie and joggers for luxury comfort days.</p>
+          </div>
+
+          <div>
+            <h3>The Leather Set</h3>
+            <p>A statement collection made for elevated street-luxe style.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="vip" className="vipSection">
+        <p className="sectionLabel">VIP Club</p>
+
+        <h2>Get early access before everyone else.</h2>
+
+        <p>
+          VIP members receive first access to preorder drops, private discounts,
+          color voting, and exclusive future releases.
+        </p>
+
+        <a className="primaryBtn" href="#waitlist">
+          Join VIP List
+        </a>
+      </section>
+
+      <section id="custom" className="customSection">
+        <p className="sectionLabel">Custom Requests</p>
+
+        <h2 className="sectionTitle">Help shape future drops.</h2>
+
+        <form className="requestForm">
+          <input placeholder="Name" />
+          <input type="email" placeholder="Email" />
+
+          <select>
+            <option>What would you like to request?</option>
+            <option>New Color</option>
+            <option>Plus Sizes</option>
+            <option>New Style</option>
+            <option>Restock Request</option>
+            <option>Personalization Request</option>
+          </select>
+
+          <input placeholder="Color / Size / Style Request" />
+
+          <textarea placeholder="Tell us what you want to see in a future drop." />
+
+          <button type="submit">Submit Request</button>
+        </form>
+      </section>
+
+      <section id="about" className="aboutSection">
+        <p className="sectionLabel">About</p>
+
+        <h2 className="sectionTitle">Riche Et Beau means rich and beautiful.</h2>
+
+        <p>
+          Riche Et Beau was created for women who want comfort, confidence,
+          and luxury in the same look. Every drop is built around soft power,
+          beautiful movement, and everyday elegance.
+        </p>
       </section>
 
       <section id="waitlist" className="waitlistSection">
@@ -286,11 +222,16 @@ function App() {
 
         <form className="waitlistForm">
           <input type="email" placeholder="Enter your email" required />
-
           <button type="submit">Join Waitlist</button>
         </form>
 
         <p className="phoneText">Questions? Text or call {phone}</p>
+      </section>
+
+      <section id="contact" className="contactSection">
+        <p className="sectionLabel">Contact</p>
+        <h2>Questions before preorder?</h2>
+        <p>Text or call {phone}</p>
       </section>
 
       <footer className="footer">
@@ -331,7 +272,6 @@ function ProductCard({ item }) {
     >
       <div className="imageWrap">
         <img src={activeImage} alt={`${item.name} ${selectedColor.name}`} />
-
         <span className="saleTag">Preorder</span>
       </div>
 
@@ -350,9 +290,7 @@ function ProductCard({ item }) {
 
       <div className="productInfo">
         <p className="colorName">{selectedColor.name}</p>
-
         <h3>{item.name}</h3>
-
         <p>{item.description}</p>
 
         <p className="releaseDate">{item.releaseDate}</p>
