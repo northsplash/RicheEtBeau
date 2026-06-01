@@ -529,3 +529,66 @@ input{
     width:100%;
   }
 }
+
+.releaseDate{
+  display:inline-block;
+  background:#efe8df;
+  color:#5a3528;
+  padding:10px 14px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:13px;
+  margin-top:8px;
+}
+
+.optionLabel{
+  margin:18px 0 10px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:12px;
+  color:#9b7c63;
+}
+
+.colorChoiceRow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:18px;
+}
+
+.colorChoice{
+  border:1px solid rgba(45,37,33,.18);
+  background:#f8f5f1;
+  color:#2d2521;
+  padding:11px 16px;
+  border-radius:999px;
+  font-weight:800;
+  cursor:pointer;
+  transition:.25s ease;
+}
+
+.colorChoice:hover,
+.activeColor{
+  background:#2d2521;
+  color:white;
+}
+
+.activeSize{
+  background:#2d2521 !important;
+  color:white !important;
+}
+
+.preorderNote{
+  font-size:13px;
+  line-height:1.5;
+  color:#8c776b;
+  margin-top:14px;
+}
+
+.saleTag{
+  background:rgba(45,37,33,.88);
+  color:white;
+}
+
+
