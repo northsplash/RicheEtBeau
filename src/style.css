@@ -591,4 +591,121 @@ input{
   color:white;
 }
 
+.brandSection,
+.customSection,
+.aboutSection,
+.contactSection{
+  padding:110px 8%;
+  background:#f8f5f1;
+}
 
+.infoGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+}
+
+.infoGrid div{
+  background:white;
+  padding:34px;
+  border-radius:28px;
+  box-shadow:0 20px 60px rgba(45,37,33,.08);
+}
+
+.infoGrid h3,
+.customSection h2,
+.contactSection h2,
+.vipSection h2{
+  font-family:'Playfair Display', Georgia, serif;
+  color:#2d2521;
+}
+
+.infoGrid h3{
+  font-size:30px;
+}
+
+.infoGrid p,
+.aboutSection p,
+.contactSection p{
+  line-height:1.8;
+  font-size:18px;
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+}
+
+.vipSection{
+  padding:110px 8%;
+  text-align:center;
+  color:white;
+  background:
+    linear-gradient(rgba(45,37,33,.72), rgba(45,37,33,.86)),
+    url("/images/sports-black-1.png");
+  background-size:cover;
+  background-position:center;
+}
+
+.vipSection h2{
+  color:white;
+  font-size:58px;
+  margin:20px auto;
+}
+
+.vipSection p{
+  max-width:760px;
+  margin:0 auto 34px;
+  line-height:1.8;
+  font-size:18px;
+}
+
+.requestForm{
+  max-width:850px;
+  margin:40px auto 0;
+  display:grid;
+  gap:16px;
+}
+
+.requestForm input,
+.requestForm select,
+.requestForm textarea{
+  width:100%;
+  padding:18px 20px;
+  border-radius:18px;
+  border:1px solid #d8cfc9;
+  background:white;
+  font-size:16px;
+}
+
+.requestForm textarea{
+  min-height:150px;
+}
+
+.requestForm button{
+  border:none;
+  background:#2d2521;
+  color:white;
+  padding:18px 28px;
+  border-radius:999px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.contactSection{
+  text-align:center;
+  background:#efe8df;
+}
+
+.contactSection h2{
+  font-size:48px;
+}
+
+@media(max-width:900px){
+  .infoGrid{
+    grid-template-columns:1fr;
+  }
+
+  .vipSection h2,
+  .contactSection h2{
+    font-size:38px;
+  }
+}
